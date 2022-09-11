@@ -1,0 +1,9 @@
+.linkBoton{
+    text-decoration: none;
+    color: white;
+}
+
+.linkBoton:hover{
+    color: rgb(206, 206, 206);
+    transition: .5s;
+}

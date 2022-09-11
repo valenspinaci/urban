@@ -1,0 +1,14 @@
+.logo{
+    width: 20%;
+    margin: 0;
+}
+
+.linkNavbar{
+    color: white;
+    text-decoration: none;
+}
+
+.linkNavbar:hover{
+    color: rgb(206, 206, 206);
+    transition: .5s;
+}
