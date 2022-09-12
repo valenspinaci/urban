@@ -6,7 +6,7 @@ const CarouselBanner = () => {
             <Carousel.Item interval={1000}>
                     <img
                         className="d-block w-100"
-                        src="https://www.jornalspnorte.com.br/wp-content/uploads/2016/10/banner-1200x300.png"
+                        src="https://www.fundacioncristinamasaveu.com/wp-content/uploads/2019/08/1200x500.png"
                         alt="First slide"
                     />
                     <Carousel.Caption>
@@ -17,7 +17,7 @@ const CarouselBanner = () => {
                 <Carousel.Item interval={500}>
                     <img
                         className="d-block w-100"
-                        src="https://www.jornalspnorte.com.br/wp-content/uploads/2016/10/banner-1200x300.png"
+                        src="https://www.fundacioncristinamasaveu.com/wp-content/uploads/2019/08/1200x500.png"
                         alt="Second slide"
                     />
                     <Carousel.Caption>
@@ -28,7 +28,7 @@ const CarouselBanner = () => {
                 <Carousel.Item>
                     <img
                         className="d-block w-100"
-                        src="https://www.jornalspnorte.com.br/wp-content/uploads/2016/10/banner-1200x300.png"
+                        src="https://www.fundacioncristinamasaveu.com/wp-content/uploads/2019/08/1200x500.png"
                         alt="Third slide"
                     />
                     <Carousel.Caption>

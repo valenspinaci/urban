@@ -1,3 +1,4 @@
+import "./itemDetailContainer.css";
 import ItemDetail from "../ItemDetail/ItemDetail";
 import Loading from "../Loading/Loading";
 import { useEffect, useState } from "react";
@@ -21,6 +22,7 @@ const ItemDetailContainer = () => {
         .finally(() => {
             setLoading(false);
         })
+        // eslint-disable-next-line
     }, []);
 
     const getProduct = new Promise((resolve, reject) => {
@@ -32,7 +34,7 @@ const ItemDetailContainer = () => {
 
 
     return (
-        <div className="mt-5">
+        <div className="contenedor mt-5">
             {
                 loading ? <Loading/> : <ItemDetail productDetail={product}/>
             }

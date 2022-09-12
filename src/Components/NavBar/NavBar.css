@@ -4,11 +4,34 @@
 }
 
 .linkNavbar{
-    color: white;
+    color: rgb(175, 175, 175);
     text-decoration: none;
 }
 
 .linkNavbar:hover{
-    color: rgb(206, 206, 206);
+    color: rgb(225, 224, 224);
     transition: .5s;
+}
+
+.linkDropdown{
+    color: white;
+}
+
+.linkCategorias{
+    text-decoration: none;
+    color: rgb(57, 57, 57);
+}
+
+.linkCategorias:hover{
+    color: black;
+    transition: .5s;
+}
+
+.linkCategorias:active{
+    color: white;
+}
+
+.fondoCategorias:active{
+    background-color: gray;
+    color: white;
 }

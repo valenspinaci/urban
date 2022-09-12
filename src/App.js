@@ -17,6 +17,7 @@ function App() {
           <Route path='contact' element={<div>Contacto</div>}/>
           <Route path='detail/:id' element={<ItemDetailContainer/>}/>
           <Route path='cart' element={<Cart/>}/>
+          <Route path='category/:categoryName' element={<ItemListContainer/>}/>
         </Routes>
         <Footer/>
       </BrowserRouter>

@@ -12,7 +12,7 @@ const ItemDetail = ({ productDetail }) => {
                 <div className="product__body">
                     <h1 className="product__title">{productDetail.product}</h1>
                     <p className="product__description">{productDetail.description}</p>
-                    <p className="product__price">${productDetail.price}</p>
+                    <h2 className="product__price">${productDetail.price}</h2>
                 </div>
                 <div className="product__footer">
                     <ItemCount initial={1} stock={5} />
