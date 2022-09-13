@@ -33,7 +33,6 @@ const ItemListContainer = () => {
             } else{
                 resolve(MockData);
             }
-
         }, 2000)
     });
 

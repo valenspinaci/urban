@@ -9,7 +9,7 @@ const Item = ({product, price, image, id})=> {
             <Card.Body>
                 <Card.Title>{product}</Card.Title>
                 <Card.Text>{"$" + price}</Card.Text>
-                <Button className='linkBoton' variant="dark">Ver detalle</Button>
+                <Button className='linkBoton'>Ver detalle</Button>
             </Card.Body>
         </Card>
     );

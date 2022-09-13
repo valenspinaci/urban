@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 
 const NavBar = () => {
     return (
-        <Navbar sticky="top" bg="dark" variant="dark" expand="lg">
+        <Navbar sticky="top" bg="black" variant="dark" expand="lg">
             <Container>
                 <Link to={"/"}><Navbar.Brand href="#home"><img className='logo' src={logo} alt="logo-urban"/></Navbar.Brand></Link>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -23,7 +23,7 @@ const NavBar = () => {
                         <Link className="linkNavbar" to={"/contact"}><Nav.Link className='ms-3' href="#link2">Contacto</Nav.Link></Link>
                     </Nav>
                     <Nav className="me-auto mb-3 mt-3">
-                        <Link to={"/cart"}><CartWidget/><Nav.Link className='ms-3 linkNavbar' href="#carrito"></Nav.Link></Link>
+                        <Link to={"/cart"}className='ms-3' href="#carrito"><CartWidget/></Link>
                     </Nav>
                 </Navbar.Collapse>
             </Container>
