@@ -11,19 +11,20 @@ const NavBar = () => {
     return (
         <Navbar sticky="top" bg="black" variant="dark" expand="lg">
             <Container>
-                <Link to={"/"}><Navbar.Brand href="#home"><img className='logo' src={logo} alt="logo-urban"/></Navbar.Brand></Link>
+                <Link to={"/"} className="brandBorder"><Navbar.Brand href="#home"><img className='logo' src={logo} alt="logo-urban"/></Navbar.Brand></Link>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto mb-3 mt-3">
+                        <Link className="linkNavbar" to={"/"}><Nav.Link className='ms-3' href="#home">Home</Nav.Link></Link>
                         <NavDropdown className="ms-3 linkDropdown" variant="light" title="Productos">
-                            <Link className="linkCategorias" to={"/category/hoodie"}><NavDropdown.Item className="fondoCategorias" href="#action/3.1">Buzos</NavDropdown.Item></Link>
-                            <Link className="linkCategorias" to={"/category/shirt"}><NavDropdown.Item className="fondoCategorias" href="#action/3.2">Remeras</NavDropdown.Item></Link>
-                            <Link className="linkCategorias" to={"/category/shoes"}><NavDropdown.Item className="fondoCategorias" href="#action/3.3">Zapatillas</NavDropdown.Item></Link>
+                            <Link className="linkCategorias" to={"/category/hoodie"}><NavDropdown.Item className="fondoCategorias" href="#hoodies">Buzos</NavDropdown.Item></Link>
+                            <Link className="linkCategorias" to={"/category/shirt"}><NavDropdown.Item className="fondoCategorias" href="#shirts">Remeras</NavDropdown.Item></Link>
+                            <Link className="linkCategorias" to={"/category/shoes"}><NavDropdown.Item className="fondoCategorias" href="#shoes">Zapatillas</NavDropdown.Item></Link>
                         </NavDropdown>
-                        <Link className="linkNavbar" to={"/contact"}><Nav.Link className='ms-3' href="#link2">Contacto</Nav.Link></Link>
+                        <Link className="linkNavbar" to={"/contact"}><Nav.Link className='ms-3' href="#contact">Contacto</Nav.Link></Link>
                     </Nav>
                     <Nav className="me-auto mb-3 mt-3">
-                        <Link to={"/cart"}className='ms-3' href="#carrito"><CartWidget/></Link>
+                        <Link to={"/cart"}className='ms-3' href="#cart"><CartWidget/></Link>
                     </Nav>
                 </Navbar.Collapse>
             </Container>

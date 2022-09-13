@@ -1,4 +1,7 @@
 import Carousel from 'react-bootstrap/Carousel';
+import carousel1 from "../../Images/carousel1.jpg";
+import carousel2 from "../../Images/carousel2.jpg";
+import carousel3 from "../../Images/carousel3.jpg";
 
 const CarouselBanner = () => {
     return (
@@ -6,7 +9,7 @@ const CarouselBanner = () => {
             <Carousel.Item interval={1000}>
                     <img
                         className="d-block w-100"
-                        src="https://www.fundacioncristinamasaveu.com/wp-content/uploads/2019/08/1200x500.png"
+                        src={carousel1}
                         alt="First slide"
                     />
                     <Carousel.Caption>
@@ -14,10 +17,10 @@ const CarouselBanner = () => {
                         <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
                     </Carousel.Caption>
                 </Carousel.Item>
-                <Carousel.Item interval={500}>
+                <Carousel.Item interval={1000}>
                     <img
                         className="d-block w-100"
-                        src="https://www.fundacioncristinamasaveu.com/wp-content/uploads/2019/08/1200x500.png"
+                        src={carousel2}
                         alt="Second slide"
                     />
                     <Carousel.Caption>
@@ -25,10 +28,10 @@ const CarouselBanner = () => {
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                     </Carousel.Caption>
                 </Carousel.Item>
-                <Carousel.Item>
+                <Carousel.Item interval={1000}>
                     <img
                         className="d-block w-100"
-                        src="https://www.fundacioncristinamasaveu.com/wp-content/uploads/2019/08/1200x500.png"
+                        src={carousel3}
                         alt="Third slide"
                     />
                     <Carousel.Caption>

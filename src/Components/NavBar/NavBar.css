@@ -1,6 +1,11 @@
 .logo{
     width: 20%;
     margin: 0;
+    padding: 0;
+}
+
+.brandBorder{
+    box-sizing: content-box;
 }
 
 .linkNavbar{
