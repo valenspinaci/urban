@@ -1,15 +1,13 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
 import Button from 'react-bootstrap/Button';
 import MockData from "../MockData/MockData";
 import { useParams } from "react-router-dom";
 import "./ItemCount.css";
 
-const ItemCount = ({initial}) => {
+const ItemCount = ({initial, counter, setCounter}) => {
 
     const { id } = useParams();
     const cantidad = (MockData.find((product) => product.id === id)).stock;
-    const [counter, setCounter] = useState(initial);
 
     const add = () => {
         if(counter === cantidad){
