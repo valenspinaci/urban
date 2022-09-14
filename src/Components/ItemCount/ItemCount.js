@@ -1,14 +1,15 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import Button from 'react-bootstrap/Button';
 import MockData from "../MockData/MockData";
 import { useParams } from "react-router-dom";
 import "./ItemCount.css";
 
-const ItemCount = ({stock, initial}) => {
+const ItemCount = ({initial}) => {
 
     const { id } = useParams();
     const cantidad = (MockData.find((product) => product.id === id)).stock;
-    const [counter, setCounter] = useState(1);
+    const [counter, setCounter] = useState(initial);
 
     const add = () => {
         if(counter === cantidad){
@@ -34,7 +35,7 @@ const ItemCount = ({stock, initial}) => {
                 <Button className="counterButton" variant="dark" onClick={add}><a className="linkButton" href="#add">  +  </a></Button>
             </div>
             <div>
-                <Button className="cartButton" variant="dark"><a className="linkButton" href="#cart">  Añadir al carrito  </a></Button>
+                <Button className="cartButton" variant="dark"><Link className="linkButton" href="#cart" to={"/cart"}>Añadir al carrito</Link></Button>
             </div>
         </div>
     )

@@ -11,7 +11,7 @@ const NavBar = () => {
     return (
         <Navbar sticky="top" bg="black" variant="dark" expand="lg">
             <Container>
-                <Link to={"/"} className="brandBorder"><Navbar.Brand href="#home"><img className='logo' src={logo} alt="logo-urban"/></Navbar.Brand></Link>
+                <Link to={"/"} className="brandBorder"><Navbar.Brand className="brandBorder" href="#home"><img className='logo brandBorder' src={logo} alt="logo-urban"/></Navbar.Brand></Link>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto mb-3 mt-3">

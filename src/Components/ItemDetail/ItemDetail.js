@@ -15,7 +15,7 @@ const ItemDetail = ({ productDetail }) => {
                     <h2 className="product__price">${productDetail.price}</h2>
                 </div>
                 <div className="product__footer">
-                    <ItemCount initial={1} stock={5} />
+                    <ItemCount initial={1} />
                 </div>
             </div>
         </div>

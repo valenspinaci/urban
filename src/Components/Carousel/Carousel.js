@@ -1,3 +1,4 @@
+import "./Carousel.css";
 import Carousel from 'react-bootstrap/Carousel';
 import carousel1 from "../../Images/carousel1.jpg";
 import carousel2 from "../../Images/carousel2.jpg";
@@ -13,8 +14,8 @@ const CarouselBanner = () => {
                         alt="First slide"
                     />
                     <Carousel.Caption>
-                        <h3>First slide label</h3>
-                        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                        <h3 className='shadowText'>Tus productos favoritos</h3>
+                        <p className='shadowText'>Las mejores zapatillas, remeras y buzos en un solo lugar</p>
                     </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item interval={1000}>
@@ -24,8 +25,8 @@ const CarouselBanner = () => {
                         alt="Second slide"
                     />
                     <Carousel.Caption>
-                        <h3>Second slide label</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <h3 className='shadowText'>Enviamos tu compra</h3>
+                        <p className='shadowText'>Hacemos entregas a todo el mundo en un plazo máximo de 15 días</p>
                     </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item interval={1000}>
@@ -35,10 +36,8 @@ const CarouselBanner = () => {
                         alt="Third slide"
                     />
                     <Carousel.Caption>
-                        <h3>Third slide label</h3>
-                        <p>
-                            Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-                        </p>
+                        <h3 className='shadowText'>Pagá como quieras</h3>
+                        <p className='shadowText'>Aceptamos todos los métodos de pago</p>
                     </Carousel.Caption>
                 </Carousel.Item>
         </Carousel>
