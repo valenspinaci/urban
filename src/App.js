@@ -6,22 +6,25 @@ import CarouselBanner from './Components/Carousel/Carousel';
 import Footer from './Components/Footer/Footer';
 import Cart from './Components/Cart/Cart';
 import ItemDetailContainer from './Components/ItemDetailContainer/ItemDetailContainer';
+import CartProvider from './Context/CartProvider';
 
 function App() {
   return (
-    <div className="App">
-      <BrowserRouter>
-        <NavBar/>
-        <Routes>
-          <Route path='/' element={<div><CarouselBanner/><ItemListContainer/></div>}/>
-          <Route path='contact' element={<div>Contacto</div>}/>
-          <Route path='detail/:id' element={<ItemDetailContainer/>}/>
-          <Route path='cart' element={<Cart/>}/>
-          <Route path='category/:categoryName' element={<ItemListContainer/>}/>
-        </Routes>
-        <Footer/>
-      </BrowserRouter>
-    </div>
+    <CartProvider>
+      <div className="App">
+        <BrowserRouter>
+          <NavBar/>
+          <Routes>
+            <Route path='/' element={<div><CarouselBanner/><ItemListContainer/></div>}/>
+            <Route path='contact' element={<div>Contacto</div>}/>
+            <Route path='detail/:id' element={<ItemDetailContainer/>}/>
+            <Route path='cart' element={<Cart/>}/>
+            <Route path='category/:categoryName' element={<ItemListContainer/>}/>
+          </Routes>
+          <Footer/>
+        </BrowserRouter>
+      </div>
+    </CartProvider>
   );
 }
 

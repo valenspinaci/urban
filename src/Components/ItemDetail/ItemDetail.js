@@ -2,7 +2,10 @@ import "./ItemDetail.css";
 import ItemCount from "../ItemCount/ItemCount";
 import { useState } from "react";
 const ItemDetail = ({ productDetail }) => {
-    const [counter, setCounter] = useState(0);
+
+    const [counter, setCounter] = useState(1);
+    const [quantity, setQuantity] = useState(0);
+
     return (
         <div>
             <div className="product">
@@ -17,7 +20,7 @@ const ItemDetail = ({ productDetail }) => {
                     <h2 className="product__price">${productDetail.price}</h2>
                 </div>
                 <div className="product__footer">
-                    <ItemCount initial={1} counter={counter} setCounter={setCounter} />
+                    <ItemCount quantity={quantity} setQuantity={setQuantity} counter={counter} setCounter={setCounter} />
                 </div>
             </div>
         </div>
