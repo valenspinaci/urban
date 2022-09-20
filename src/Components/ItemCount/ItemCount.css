@@ -55,3 +55,10 @@
     color: black;
     transition: .5s;
 }
+
+.buttonsCount{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

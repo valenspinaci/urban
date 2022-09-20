@@ -1,11 +1,14 @@
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import Button from 'react-bootstrap/Button';
 import MockData from "../MockData/MockData";
-import { useParams } from "react-router-dom";
 import "./ItemCount.css";
 import { useState } from "react";
+import { CartContext } from "../../Context/cartContext";
+import { useContext } from "react";
 
-const ItemCount = ({ counter, setCounter, quantity, setQuantity}) => {
+const ItemCount = ({ counter, setCounter, quantity, setQuantity, product}) => {
+
+    const {addToCart} = useContext(CartContext);
 
     const { id } = useParams();
     const cantidad = (MockData.find((product) => product.id === id)).stock;
@@ -27,10 +30,10 @@ const ItemCount = ({ counter, setCounter, quantity, setQuantity}) => {
         }
     };
 
-    const onAdd = ()=>{
-        setQuantity(counter);
+    const onAdd = ( product ) => {
         setButtonCart(<Link className="linkButton" to={"/cart"}>Ir al carrito</Link>);
         setCounter(1);
+        addToCart(product, counter);
     };
 
     return (
@@ -40,8 +43,9 @@ const ItemCount = ({ counter, setCounter, quantity, setQuantity}) => {
                 <p className="counterText">{counter}</p>
                 <Button className="counterButton" variant="dark" onClick={add}><a className="linkButton" href="#add">  +  </a></Button>
             </div>
-            <div>
-                <Button onClick={onAdd} className="cartButton" variant="dark">{buttonCart}</Button>
+            <div className="buttonsCount">
+                <Button onClick={ ()=> onAdd (product) } className="cartButton linkButton" variant="dark">{buttonCart}</Button>
+                <Button className="cartButton" variant="dark"><Link className="linkButton" to="/">Volver a inicio</Link></Button>
             </div>
         </div>
     )

@@ -6,7 +6,7 @@ import CarouselBanner from './Components/Carousel/Carousel';
 import Footer from './Components/Footer/Footer';
 import Cart from './Components/Cart/Cart';
 import ItemDetailContainer from './Components/ItemDetailContainer/ItemDetailContainer';
-import CartProvider from './Context/CartProvider';
+import CartProvider from "./Context/CartProvider";
 
 function App() {
   return (

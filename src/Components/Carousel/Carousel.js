@@ -7,7 +7,7 @@ import carousel3 from "../../Images/carousel3.jpg";
 const CarouselBanner = () => {
     return (
         <Carousel>
-            <Carousel.Item interval={1000}>
+            <Carousel.Item interval={3000}>
                     <img
                         className="d-block w-100"
                         src={carousel1}
@@ -18,7 +18,7 @@ const CarouselBanner = () => {
                         <p className='shadowText'>Las mejores zapatillas, remeras y buzos en un solo lugar</p>
                     </Carousel.Caption>
                 </Carousel.Item>
-                <Carousel.Item interval={1000}>
+                <Carousel.Item interval={3000}>
                     <img
                         className="d-block w-100"
                         src={carousel2}
@@ -29,7 +29,7 @@ const CarouselBanner = () => {
                         <p className='shadowText'>Hacemos entregas a todo el mundo en un plazo máximo de 15 días</p>
                     </Carousel.Caption>
                 </Carousel.Item>
-                <Carousel.Item interval={1000}>
+                <Carousel.Item interval={3000}>
                     <img
                         className="d-block w-100"
                         src={carousel3}
