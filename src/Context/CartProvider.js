@@ -15,19 +15,38 @@ const CartProvider = ({ children }) => {
 
     const isInCart = (id) =>{
         return cart.some ((item) => item.id === id)
-    }
+    };
+
+    const filteredQuantityArray = cart.map((item) =>{
+        return item.quantity
+    })
+    const totalQuantity = filteredQuantityArray.reduce((acc, quantity) => {
+            return acc = acc + quantity;
+        }, 0);
+
+    const filteredPriceArray = cart.map((item) => {
+        return (item.price * item.quantity)
+    });
+    const totalPrice = filteredPriceArray.reduce((acc, price) => {
+        return acc = acc + price
+    }, 0);
 
     const removeItem = (id) =>{
-        const removeObject = cart.some((item) => item.id === id);
-        cart.splice(removeObject, 1)
-    }
+        let newArray = [];
+        cart.forEach((product) => {
+            if(product.id !== id){
+                newArray.push(product)
+            }
+        });
+        setCart(newArray);
+    };
 
     const clear = () => {
         setCart([]);
-    }
+    };
 
     return (
-        <CartContext.Provider value={{ cart, addToCart, removeItem, clear }}>
+        <CartContext.Provider value={{ cart, addToCart, removeItem, clear, totalQuantity, totalPrice }}>
             {children}
         </CartContext.Provider>
     );

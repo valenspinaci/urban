@@ -5,7 +5,15 @@
 }
 
 .brandBorder{
-    box-sizing: content-box;
+    border-image: 0;
+    margin: 0;
+    --bs-gutter-x: 0;
+    display: block;
+    padding: 0;
+}
+
+.brandBorder2{
+    display: block;
 }
 
 .linkNavbar{
@@ -39,4 +47,8 @@
 .fondoCategorias:active{
     background-color: gray;
     color: white;
+}
+
+.cart{
+    text-decoration: none;
 }

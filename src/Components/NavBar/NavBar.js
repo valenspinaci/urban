@@ -6,12 +6,15 @@ import logo from "../../Images/logo-urban.png";
 import CartWidget from '../CartWidget/CartWidget';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { CartContext } from "../../Context/cartContext";
 
 const NavBar = () => {
+    const { cart } = useContext(CartContext)
     return (
         <Navbar sticky="top" bg="black" variant="dark" expand="lg">
             <Container>
-                <Link to={"/"} className="brandBorder"><Navbar.Brand className="brandBorder" href="#home"><img className='logo brandBorder' src={logo} alt="logo-urban"/></Navbar.Brand></Link>
+                <Link to={"/"} className="brandBorder"><Navbar.Brand className="brandBorder2" href="#home"><img className='logo brandBorder' src={logo} alt="logo-urban"/></Navbar.Brand></Link>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto mb-3 mt-3">
@@ -24,7 +27,7 @@ const NavBar = () => {
                         <Link className="linkNavbar" to={"/contact"}><Nav.Link className='ms-3' href="#contact">Contacto</Nav.Link></Link>
                     </Nav>
                     <Nav className="me-auto mb-3 mt-3">
-                        <Link to={"/cart"}className='ms-3' href="#cart"><CartWidget/></Link>
+                        {cart.length !== 0 ? <Link to={"/cart"}className='ms-3 cart' href="#cart"><CartWidget/></Link> : console.log("Empty cart")}
                     </Nav>
                 </Navbar.Collapse>
             </Container>

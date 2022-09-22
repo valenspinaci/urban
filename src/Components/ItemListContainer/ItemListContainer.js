@@ -28,8 +28,8 @@ const ItemListContainer = () => {
     const getProducts = new Promise((resolve, reject) => {
         setTimeout(()=>{
             if(categoryName){
-                const categoriaFiltrada = MockData.filter((product) => product.category === categoryName);
-                resolve(categoriaFiltrada);
+                const filteredCategory = MockData.filter((product) => product.category === categoryName);
+                resolve(filteredCategory);
             } else{
                 resolve(MockData);
             }

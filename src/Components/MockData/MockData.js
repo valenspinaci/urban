@@ -1,6 +1,6 @@
 const MockData = [
     {
-        product : "zapatilla1",
+        product : "Zapatilla 1",
         category : "shoes",
         price : 2000,
         id : "1",
@@ -9,7 +9,7 @@ const MockData = [
         stock: 3
     },
     {
-        product : "buzo1",
+        product : "Buzo 1",
         category : "hoodie",
         price : 2000,
         id : "2",
@@ -18,7 +18,7 @@ const MockData = [
         stock: 5
     },
     {
-        product : "remera1",
+        product : "Remera 1",
         category : "shirt",
         price : 2000,
         id : "3",
@@ -27,7 +27,7 @@ const MockData = [
         stock: 6
     },
     {
-        product : "zapatilla2",
+        product : "Zapatilla 2",
         category : "shoes",
         price : 2000,
         id : "4",
@@ -36,7 +36,7 @@ const MockData = [
         stock: 2
     },
     {
-        product : "buzo2",
+        product : "Buzo 2",
         category : "hoodie",
         price : 2000,
         id : "5",
@@ -45,7 +45,7 @@ const MockData = [
         stock: 4
     },
     {
-        product : "remera2",
+        product : "Remera 2",
         category : "shirt",
         price : 2000,
         id : "6",
