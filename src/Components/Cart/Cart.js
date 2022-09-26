@@ -8,6 +8,7 @@ import Card from 'react-bootstrap/Card';
 
 const Cart = () => {
     const {cart, removeItem, totalQuantity, totalPrice, clear} = useContext(CartContext)
+    const rutaInicial = "../../img/"
     return (
         (<div className="cartContainer">
             {cart.length === 0 ?
@@ -20,11 +21,10 @@ const Cart = () => {
             {cart.map((item) =>(
                 <div key={item.id} className="contenedorCart">
                     <Card className="displayCard" style={{ width: '100%' }}>
-                        <Card.Img className="image" variant="start" src={item.image} />
+                        <Card.Img className="image" variant="start" src={rutaInicial + item.image} />
                         <Card.Body className="bodyCard">
                             <Card.Title className="my-2 fw-bold"><h2>{item.product}</h2></Card.Title>
                             <Card.Text>
-                                <p className="detailCard">{item.description}</p>
                                 <p className="detailCard">{item.quantity} agregado/s al carrito</p>
                                 <p className="detailCard fw-bold">${item.price}<span className="smallLetters fw-normal"> c/u</span></p>
                                 <h3 className="detailCard fw-bold"><span className="fw-normal totalCard">Total:</span> ${item.quantity * item.price}</h3>

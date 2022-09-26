@@ -14,14 +14,14 @@ const NavBar = () => {
     return (
         <Navbar sticky="top" bg="black" variant="dark" expand="lg">
             <Container>
-                <Link to={"/"} className="brandBorder"><Navbar.Brand className="brandBorder2" href="#home"><img className='logo brandBorder' src={logo} alt="logo-urban"/></Navbar.Brand></Link>
+                <Link to={"/"} className="brandBorder"><img className='logo brandBorder' src={logo} alt="logo-urban"/></Link>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto mb-3 mt-3">
                         <Link className="linkNavbar" to={"/"}><Nav.Link className='ms-3' href="#home">Home</Nav.Link></Link>
                         <NavDropdown className="ms-3 linkDropdown" variant="light" title="Productos">
-                            <Link className="linkCategorias" to={"/category/hoodie"}><NavDropdown.Item className="fondoCategorias" href="#hoodies">Buzos</NavDropdown.Item></Link>
-                            <Link className="linkCategorias" to={"/category/shirt"}><NavDropdown.Item className="fondoCategorias" href="#shirts">Remeras</NavDropdown.Item></Link>
+                            <Link className="linkCategorias" to={"/category/hoodies"}><NavDropdown.Item className="fondoCategorias" href="#hoodies">Buzos</NavDropdown.Item></Link>
+                            <Link className="linkCategorias" to={"/category/shirts"}><NavDropdown.Item className="fondoCategorias" href="#shirts">Remeras</NavDropdown.Item></Link>
                             <Link className="linkCategorias" to={"/category/shoes"}><NavDropdown.Item className="fondoCategorias" href="#shoes">Zapatillas</NavDropdown.Item></Link>
                         </NavDropdown>
                         <Link className="linkNavbar" to={"/contact"}><Nav.Link className='ms-3' href="#contact">Contacto</Nav.Link></Link>

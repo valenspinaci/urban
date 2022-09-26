@@ -5,12 +5,14 @@ const ItemDetail = ({ productDetail }) => {
 
     const [counter, setCounter] = useState(1);
 
+    const rutaInicial = "../../img/"
+
     return (
         <div>
             <div className="product">
                 <div className="product__header">
                     <figure className="product__figure">
-                        <img src={productDetail.image} alt={productDetail.product} className="product__img" />
+                        <img src={rutaInicial + productDetail.image} alt={productDetail.product} className="product__img" />
                     </figure>
                 </div>
                 <div className="product__body">

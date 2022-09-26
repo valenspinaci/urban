@@ -3,7 +3,7 @@ import ItemDetail from "../ItemDetail/ItemDetail";
 import Loading from "../Loading/Loading";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import MockData from "../MockData/MockData";
+import { doc, getFirestore, getDoc } from "firebase/firestore";
 
 const ItemDetailContainer = () => {
 
@@ -11,32 +11,33 @@ const ItemDetailContainer = () => {
     const [loading, setLoading] = useState(true);
     const { id } = useParams();
 
-    useEffect(() => {
-        getProduct
-        .then((response) => {
-            setProduct(response);
-        })
-        .catch((error) => {
-            console.log(error);
-        })
-        .finally(() => {
-            setLoading(false);
-        })
-        // eslint-disable-next-line
-    }, []);
+    const db = getFirestore();
 
-    const getProduct = new Promise((resolve, reject) => {
-        setTimeout(()=>{
-            const dataFiltrada = MockData.find((producto) => producto.id === id);
-            resolve(dataFiltrada);
-        }, 2000)
-    });
+    const getProduct = () =>{
+        const queryDoc = doc(db, "items", id);
+
+        getDoc(queryDoc)
+            .then((res)=> {
+                setProduct({id:res.id, ...res.data()});
+            })
+            .catch((error)=>{
+                console.log(error)
+            })
+            .finally(() =>{
+                setLoading(false)
+            })
+        }
+
+    useEffect(() => {
+        getProduct()
+        // eslint-disable-next-line
+    }, [id]);
 
 
     return (
         <div className="contenedor mt-5">
             {
-                loading ? <Loading/> : <ItemDetail productDetail={product}/>
+                loading ? <Loading/> : product && <ItemDetail productDetail={product}/>
             }
         </div>
     )

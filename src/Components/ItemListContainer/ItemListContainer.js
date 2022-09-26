@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import MockData from "../MockData/MockData";
 import ItemList from "../ItemList/ItemList";
 import Loading from "../Loading/Loading";
-import "./ItemListContainer.css"
+import "./ItemListContainer.css";
+import { getDocs, getFirestore, collection, query, where } from "firebase/firestore";
 
 const ItemListContainer = () => {
 
@@ -11,30 +11,48 @@ const ItemListContainer = () => {
     const [loading, setLoading] = useState(true);
     const {categoryName} = useParams();
 
+    const getProducts = () => {
+        const db = getFirestore();
+        const querySnapshot = collection(db, "items");
+        
+        if (categoryName){
+            const queryFilter = query(querySnapshot,
+                where("category", "==", categoryName));
+
+            getDocs(queryFilter)
+            .then((response) =>{
+                const data = response.docs.map((doc) => {
+                    return {id: doc.id, ...doc.data()};
+                });
+                setProductList(data)
+            })
+            .catch((error) => {
+                console.log(error)
+            })
+            .finally(() =>{
+                setLoading(false)
+            })
+        } else{
+            getDocs(querySnapshot)
+            .then((response) =>{
+                const data = response.docs.map((doc) => {
+                    return {id: doc.id, ...doc.data()};
+                });
+                setProductList(data)
+            })
+            .catch((error) => {
+                console.log(error)
+            })
+            .finally(() =>{
+                setLoading(false)
+            })
+        }
+    }
+
     useEffect(() => {
-        getProducts
-        .then((response) => {
-            setProductList(response);
-        })
-        .catch((error) => {
-            console.log(error);
-        })
-        .finally(() => {
-            setLoading(false);
-        })
+        getProducts();
         // eslint-disable-next-line
     }, [categoryName]);
-
-    const getProducts = new Promise((resolve, reject) => {
-        setTimeout(()=>{
-            if(categoryName){
-                const filteredCategory = MockData.filter((product) => product.category === categoryName);
-                resolve(filteredCategory);
-            } else{
-                resolve(MockData);
-            }
-        }, 2000)
-    });
 
 
 
