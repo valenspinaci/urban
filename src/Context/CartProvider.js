@@ -1,5 +1,7 @@
 import { useState } from "react";
-import { CartContext } from "./cartContext.js"
+import { CartContext } from "./cartContext.js";
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const CartProvider = ({ children }) => {
     const [cart, setCart] = useState([]);
@@ -32,17 +34,29 @@ const CartProvider = ({ children }) => {
     }, 0);
 
     const removeItem = (id) =>{
-        let newArray = [];
-        cart.forEach((product) => {
-            if(product.id !== id){
-                newArray.push(product)
-            }
-        });
-        setCart(newArray);
+        setCart(cart.filter((product)=> product.id !== id));
+        toast.success('Producto eliminado del carrito', {
+            position: "bottom-left",
+            autoClose: 2000,
+            hideProgressBar: true,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            });
     };
 
     const clear = () => {
         setCart([]);
+        toast.success('El carrito fue vaciado', {
+            position: "bottom-left",
+            autoClose: 2000,
+            hideProgressBar: true,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            });
     };
 
     return (

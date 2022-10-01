@@ -7,6 +7,7 @@ import Footer from './Components/Footer/Footer';
 import Cart from './Components/Cart/Cart';
 import ItemDetailContainer from './Components/ItemDetailContainer/ItemDetailContainer';
 import CartProvider from "./Context/CartProvider";
+import Contact from './Components/Contact/Contact';
 
 function App() {
   return (
@@ -16,7 +17,7 @@ function App() {
           <NavBar/>
           <Routes>
             <Route path='/' element={<div><CarouselBanner/><ItemListContainer/></div>}/>
-            <Route path='contact' element={<div>Contacto</div>}/>
+            <Route path='contact' element={<Contact/>}/>
             <Route path='detail/:id' element={<ItemDetailContainer/>}/>
             <Route path='cart' element={<Cart/>}/>
             <Route path='category/:categoryName' element={<ItemListContainer/>}/>

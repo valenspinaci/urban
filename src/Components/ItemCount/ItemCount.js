@@ -4,13 +4,14 @@ import "./ItemCount.css";
 import { useState } from "react";
 import { CartContext } from "../../Context/cartContext";
 import { useContext } from "react";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const ItemCount = ({ counter, setCounter, product}) => {
 
     const {addToCart} = useContext(CartContext);
 
     const cantidad = product.stock;
-    const [buttonCart, setButtonCart] = useState("Añadir al carrito");
 
     const add = () => {
         if(counter === cantidad){
@@ -28,10 +29,21 @@ const ItemCount = ({ counter, setCounter, product}) => {
         }
     };
 
+    const [buttonCart, setButtonCart] = useState(<Button onClick={ ()=> onAdd (product) } className="cartButton linkButton" variant="dark">Añadir al carrito</Button>);
+
     const onAdd = ( product ) => {
-        setButtonCart(<Link className="linkButton" to={"/cart"}>Ir al carrito</Link>);
+        setButtonCart(<Button className="cartButton linkButton" variant="dark"><Link className="linkButton" to={"/cart"}>Ir al carrito</Link></Button>);
         setCounter(1);
         addToCart(product, counter);
+        toast.success('Producto añadido al carrito', {
+            position: "bottom-left",
+            autoClose: 2000,
+            hideProgressBar: true,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            });
     };
 
     return (
@@ -42,9 +54,20 @@ const ItemCount = ({ counter, setCounter, product}) => {
                 <Button className="counterButton linkButton" variant="dark" onClick={add}>  +  </Button>
             </div>
             <div className="buttonsCount">
-                <Button onClick={ ()=> onAdd (product) } className="cartButton linkButton" variant="dark">{buttonCart}</Button>
+                {buttonCart}
                 <Button className="cartButton" variant="dark"><Link className="linkButton" to="/">Volver a inicio</Link></Button>
             </div>
+            <ToastContainer
+                position="bottom-left"
+                autoClose={2000}
+                hideProgressBar={true}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+            />
         </div>
     )
 }

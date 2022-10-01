@@ -13,26 +13,8 @@ const ItemListContainer = () => {
 
     const getProducts = () => {
         const db = getFirestore();
-        const querySnapshot = collection(db, "items");
-        
-        if (categoryName){
-            const queryFilter = query(querySnapshot,
-                where("category", "==", categoryName));
-
-            getDocs(queryFilter)
-            .then((response) =>{
-                const data = response.docs.map((doc) => {
-                    return {id: doc.id, ...doc.data()};
-                });
-                setProductList(data)
-            })
-            .catch((error) => {
-                console.log(error)
-            })
-            .finally(() =>{
-                setLoading(false)
-            })
-        } else{
+        const queryBase = collection(db, "items");
+        const querySnapshot = categoryName ? query(queryBase, where("category" , "==", categoryName)):queryBase;
             getDocs(querySnapshot)
             .then((response) =>{
                 const data = response.docs.map((doc) => {
@@ -45,10 +27,7 @@ const ItemListContainer = () => {
             })
             .finally(() =>{
                 setLoading(false)
-            })
-        }
-    }
-
+            })}
     useEffect(() => {
         getProducts();
         // eslint-disable-next-line
