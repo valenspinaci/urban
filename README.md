@@ -6,6 +6,10 @@ E-commerce creado para el curso de React JS de CoderHouse
 
 
 
+![Logo](https://jobs.coderhouse.com/assets/logos_coderhouse.png)
+## Screenshots
+
+![App Screenshot](./public/img/grabacion-pantalla.gif)
 ## Stack Utilizado
 Para este proyecto utilicé React JS, Bootstrap-React, CSS y Javascript
 ## 🚀 Acerca de Mi
