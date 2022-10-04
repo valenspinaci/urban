@@ -1,11 +1,8 @@
 import "./ItemDetail.css";
 import ItemCount from "../ItemCount/ItemCount";
-import { useState } from "react";
 const ItemDetail = ({ productDetail }) => {
 
-    const [counter, setCounter] = useState(1);
-
-    const rutaInicial = "../../img/"
+    const rutaInicial = "../../img/";
 
     return (
         <div>
@@ -21,7 +18,7 @@ const ItemDetail = ({ productDetail }) => {
                     <h2 className="product__price">${productDetail.price}</h2>
                 </div>
                 <div className="product__footer">
-                    <ItemCount product={productDetail} counter={counter} setCounter={setCounter} />
+                    <ItemCount item={productDetail} />
                 </div>
             </div>
         </div>

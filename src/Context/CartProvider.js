@@ -6,6 +6,10 @@ import 'react-toastify/dist/ReactToastify.css';
 const CartProvider = ({ children }) => {
     const [cart, setCart] = useState([]);
 
+    const isInCart = (id) =>{
+        return cart.some ((item) => item.id === id);
+    };
+
     const addToCart = (item, quantity) => {
         if(isInCart(item.id)){
             alert("Este producto ya está en tu carrito")
@@ -15,22 +19,18 @@ const CartProvider = ({ children }) => {
         }
     };
 
-    const isInCart = (id) =>{
-        return cart.some ((item) => item.id === id)
-    };
-
     const filteredQuantityArray = cart.map((item) =>{
-        return item.quantity
+        return item.quantity;
     })
     const totalQuantity = filteredQuantityArray.reduce((acc, quantity) => {
             return acc = acc + quantity;
         }, 0);
 
     const filteredPriceArray = cart.map((item) => {
-        return (item.price * item.quantity)
+        return (item.price * item.quantity);
     });
     const totalPrice = filteredPriceArray.reduce((acc, price) => {
-        return acc = acc + price
+        return acc = acc + price;
     }, 0);
 
     const removeItem = (id) =>{
@@ -60,7 +60,7 @@ const CartProvider = ({ children }) => {
     };
 
     return (
-        <CartContext.Provider value={{ cart, addToCart, removeItem, clear, totalQuantity, totalPrice }}>
+        <CartContext.Provider value={{ cart, addToCart, removeItem, clear, totalQuantity, totalPrice}}>
             {children}
         </CartContext.Provider>
     );

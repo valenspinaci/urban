@@ -14,6 +14,10 @@
     color: rgb(37, 37, 37);
 }
 
+.linkCard div{
+    max-height: 450px;
+}
+
 .linkCard:hover{
     color: black;
     transition: .5s;
