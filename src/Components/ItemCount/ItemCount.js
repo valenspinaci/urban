@@ -10,8 +10,8 @@ import 'react-toastify/dist/ReactToastify.css';
 const ItemCount = ({ item }) => {
 
     const {addToCart} = useContext(CartContext);
-    const [counter, setCounter] = useState(1);
-    const [buttonCart, setButtonCart] = useState(<Button onClick={ ()=> onAdd (item) } className="cartButton linkButton" variant="dark">Añadir al carrito</Button>);
+    const [counter, setCounter] = useState(0);
+    const [buttonCart, setButtonCart] = useState(true);
     const cantidad = item.stock;
 
     const add = () => {
@@ -46,11 +46,9 @@ const ItemCount = ({ item }) => {
         }
     };
 
-    console.log(counter)
-
     const onAdd = ( item ) => {
         addToCart(item, counter);
-        setButtonCart(<Button className="cartButton linkButton" variant="dark"><Link className="linkButton" to={"/cart"}>Ir al carrito</Link></Button>);
+        setButtonCart(false);
         toast.success('Producto añadido al carrito', {
             position: "bottom-left",
             autoClose: 2000,
@@ -60,7 +58,7 @@ const ItemCount = ({ item }) => {
             draggable: true,
             progress: undefined,
             });
-        setCounter(1);
+        setCounter(0);
     };
 
     return (
@@ -71,7 +69,12 @@ const ItemCount = ({ item }) => {
                 <Button className="counterButton linkButton" variant="dark" onClick={add}>  +  </Button>
             </div>
             <div className="buttonsCount">
-                {buttonCart}
+                {buttonCart ? (
+                    <Button onClick={ ()=> onAdd (item) } className="cartButton linkButton" variant="dark">Añadir al carrito</Button>
+                ) :
+                (
+                    <Button className="cartButton linkButton" variant="dark"><Link className="linkButton" to={"/cart"}>Ir al carrito</Link></Button>
+                )}
                 <Button className="cartButton" variant="dark"><Link className="linkButton" to="/">Volver a inicio</Link></Button>
             </div>
             <ToastContainer
