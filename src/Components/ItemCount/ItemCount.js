@@ -58,7 +58,7 @@ const ItemCount = ({ item }) => {
             draggable: true,
             progress: undefined,
             });
-        setCounter(0);
+        setCounter(1);
     };
 
     return (
