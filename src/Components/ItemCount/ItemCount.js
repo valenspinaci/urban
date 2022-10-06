@@ -10,7 +10,7 @@ import 'react-toastify/dist/ReactToastify.css';
 const ItemCount = ({ item }) => {
 
     const {addToCart} = useContext(CartContext);
-    const [counter, setCounter] = useState(0);
+    const [counter, setCounter] = useState(1);
     const [buttonCart, setButtonCart] = useState(true);
     const cantidad = item.stock;
 
