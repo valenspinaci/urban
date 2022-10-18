@@ -69,6 +69,37 @@ const Cart = () => {
         })
     }
 
+    const buy = (event) =>{
+        event.preventDefault();
+        if(order.buyer.name === "" || order.buyer.phone === "" || order.buyer.email === ""){
+            MySwal.fire(
+                'Lo sentimos!',
+                'Debe completar el formulario para generar la orden',
+                'error'
+            )
+        }else if(order.buyer.email.indexOf("@") === -1 || order.buyer.email.indexOf(".") === -1){
+            MySwal.fire(
+                'Lo sentimos!',
+                'El email ingresado no cumple con el formato base',
+                'error'
+            )
+        }else if(order.buyer.phone.length<9){
+            MySwal.fire(
+                'Lo sentimos!',
+                'El número de telefono debe contener al menos 9 digitos',
+                'error'
+            )
+        }else if(!isNaN(order.buyer.name)){
+            MySwal.fire(
+                'Lo sentimos!',
+                'Por favor ingresa un nombre válido',
+                'error'
+            )
+        }else{
+            createOrder();
+        }
+    }
+
     const handleInputChange= (e) =>{
         setOrder({
             ...order,
@@ -122,7 +153,7 @@ const Cart = () => {
             </div>
 
             <div>
-                <Form className='w-80 mx-auto mt-3'>
+                <Form className='w-80 mx-auto mt-3' onSubmit={buy}>
                     <Form.Group className="mb-3" controlId="formBasicName">
                         <Form.Label>Nombre(*)</Form.Label>
                         <Form.Control id="name" type="text" name="name" value={order.buyer.name} onChange={handleInputChange} required placeholder="Ingresá tu nombre" />
@@ -130,7 +161,7 @@ const Cart = () => {
 
                     <Form.Group className="mb-3" controlId="formBasicCell">
                         <Form.Label>Teléfono</Form.Label>
-                        <Form.Control type="number" name="phone" value={order.buyer.phone} onChange={handleInputChange} placeholder="Ingresá tu telefono" />
+                        <Form.Control type="number" name="phone" value={order.buyer.phone} onChange={handleInputChange} required placeholder="Ingresá tu telefono" />
                     </Form.Group>
 
                     <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -142,7 +173,7 @@ const Cart = () => {
 
             <div className="buttonsContainer">
                 <Button onClick={()=>clear()} className="linkButton emptyButton">Vaciar carrito</Button>
-                <Button onClick={createOrder} className="linkButton emptyButton">Crear Orden</Button>
+                <Button onClick={buy} className="linkButton emptyButton">Crear Orden</Button>
             </div>
             </>
             }
