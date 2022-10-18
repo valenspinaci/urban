@@ -33,7 +33,7 @@ const Cart = () => {
         .then(({ id }) =>{
             MySwal.fire(
                 'Excelente!',
-                'La orden se generó con éxito',
+                `La orden se generó con éxito. Tu número de orden es:${id}`,
                 'success'
             )
             console.log(id);
@@ -125,7 +125,7 @@ const Cart = () => {
                 <Form className='w-80 mx-auto mt-3'>
                     <Form.Group className="mb-3" controlId="formBasicName">
                         <Form.Label>Nombre(*)</Form.Label>
-                        <Form.Control type="text" name="name" value={order.buyer.name} onChange={handleInputChange} required placeholder="Ingresá tu nombre" />
+                        <Form.Control id="name" type="text" name="name" value={order.buyer.name} onChange={handleInputChange} required placeholder="Ingresá tu nombre" />
                     </Form.Group>
 
                     <Form.Group className="mb-3" controlId="formBasicCell">
