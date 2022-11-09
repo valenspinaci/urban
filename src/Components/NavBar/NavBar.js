@@ -18,13 +18,13 @@ const NavBar = () => {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto mb-3 mt-3">
-                        <Link className="linkNavbar" to={"/"}><Nav.Link className='ms-3' href="#home">Home</Nav.Link></Link>
+                        <Nav.Link className='linkNavbar ms-3' href="/">Home</Nav.Link>
                         <NavDropdown className="ms-3 linkDropdown" variant="light" title="Productos">
-                            <Link className="linkCategorias" to={"/category/hoodies"}><NavDropdown.Item className="fondoCategorias" href="#hoodies">Buzos</NavDropdown.Item></Link>
-                            <Link className="linkCategorias" to={"/category/shirts"}><NavDropdown.Item className="fondoCategorias" href="#shirts">Remeras</NavDropdown.Item></Link>
-                            <Link className="linkCategorias" to={"/category/shoes"}><NavDropdown.Item className="fondoCategorias" href="#shoes">Zapatillas</NavDropdown.Item></Link>
+                            <NavDropdown.Item className="linkCategorias fondoCategorias" href="/category/hoodies">Buzos</NavDropdown.Item>
+                            <NavDropdown.Item className="linkCategorias fondoCategorias" href="/category/shirts">Remeras</NavDropdown.Item>
+                            <NavDropdown.Item className="linkCategorias fondoCategorias" href="/category/shoes">Zapatillas</NavDropdown.Item>
                         </NavDropdown>
-                        <Link className="linkNavbar" to={"/contact"}><Nav.Link className='ms-3' href="#contact">Contacto</Nav.Link></Link>
+                        <Nav.Link className='linkNavbar ms-3' href="/contact">Contacto</Nav.Link>
                     </Nav>
                     <Nav className="me-auto mb-3 mt-3">
                         {cart.length !== 0 ? <Link to={"/cart"}className='ms-3 cart' href="#cart"><CartWidget/></Link> : console.log("Empty cart")}

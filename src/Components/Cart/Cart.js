@@ -154,17 +154,17 @@ const Cart = () => {
 
             <div>
                 <Form className='w-80 mx-auto mt-3' onSubmit={buy}>
-                    <Form.Group className="mb-3" controlId="formBasicName">
+                    <Form.Group className="mb-3" controlId="name">
                         <Form.Label>Nombre(*)</Form.Label>
-                        <Form.Control id="name" type="text" name="name" value={order.buyer.name} onChange={handleInputChange} required placeholder="Ingresá tu nombre" />
+                        <Form.Control type="text" name="name" value={order.buyer.name} onChange={handleInputChange} required placeholder="Ingresá tu nombre" />
                     </Form.Group>
 
-                    <Form.Group className="mb-3" controlId="formBasicCell">
+                    <Form.Group className="mb-3" controlId="phone">
                         <Form.Label>Teléfono</Form.Label>
                         <Form.Control type="number" name="phone" value={order.buyer.phone} onChange={handleInputChange} required placeholder="Ingresá tu telefono" />
                     </Form.Group>
 
-                    <Form.Group className="mb-3" controlId="formBasicEmail">
+                    <Form.Group className="mb-3" controlId="email">
                         <Form.Label>Email(*)</Form.Label>
                         <Form.Control type="email" name="email" value={order.buyer.email} onChange={handleInputChange} required placeholder="Ingresá tu email" />
                     </Form.Group>
