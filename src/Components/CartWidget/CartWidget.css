@@ -1,0 +1,25 @@
+.carrito{
+    width: 1.5rem;
+    text-decoration: none;
+}
+
+.displayCartWidget{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+    text-decoration: none;
+}
+
+.totalQuantity{
+    text-decoration: none;
+    color: black;
+    font-size: .9rem;
+    background-color: white;
+    padding-left:.5rem ;
+    padding-right: .5rem;
+    border-radius: 1rem;
+    margin-bottom: 0;
+    font-weight: bold;
+}

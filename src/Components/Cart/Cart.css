@@ -1,0 +1,194 @@
+.cartContainer{
+    min-height: 75vh;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.img-corazon{
+    width: 10%;
+    margin-bottom: 1rem;
+}
+
+.cartButton{
+    border: none;
+    color: #ffffff;
+    background-color: black;
+    font-weight: bold;
+    border-radius: 10px;
+    padding: 15px 0;
+    cursor: pointer;
+    width: 40%;
+    font-size: 16px;
+    transition: 0.2s;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.cartButton:hover{
+    background-color: rgb(198, 198, 198);
+    transition: .5s;
+    border: none;
+}
+
+.emptyButton{
+    border: none;
+    color: #ffffff;
+    background-color: black;
+    font-weight: bold;
+    border-radius: 10px;
+    padding: 15px 0;
+    cursor: pointer;
+    width: 40%;
+    font-size: 16px;
+    transition: 0.2s;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.emptyButton:hover{
+    background-color: rgb(198, 198, 198);
+    transition: .5s;
+    border: none;
+}
+
+.removeButton{
+    border: none;
+    color: #ffffff;
+    background-color: black;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.2s;
+    border-radius: 0 4px 4px 0;
+}
+
+.removeButton:hover{
+    background-color: rgb(198, 198, 198);
+    transition: .5s;
+    border: none;
+}
+
+.linkButton{
+    text-decoration: none;
+    color: white;
+}
+
+.linkButton:hover{
+    color: black;
+    transition: .5s;
+}
+
+.displayCard{
+    display: flex;
+    flex-direction: row;
+    height: auto;
+    margin-top: 1rem;
+}
+
+.image{
+    object-fit: contain;
+    margin-left: 1rem;
+    width: 40%;
+    min-width: 35%;
+}
+
+.bodyCard{
+    width: 100%;
+    margin-left: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.contenedorCart{
+    width: 50%;
+}
+
+.detailCard{
+    text-align: left;
+}
+
+.smallLetters{
+    font-size: .75rem;
+}
+
+.totalCard{
+    text-decoration: underline;
+}
+
+.resumeContainer{
+    background-color: black;
+    width: 50%;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: white;
+    gap: 3rem;
+}
+
+.totalPrice span{
+    text-decoration: underline;
+}
+
+.buttonsContainer{
+    display: flex;
+    margin-top: 1rem;
+    flex-direction: row;
+    gap: 2rem;
+}
+
+@media (max-width:980px){
+    .displayCard{
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        margin-top: 1rem;
+    }
+
+    .image{
+        object-fit: contain;
+        margin: 0 auto;
+        width: 50%;
+    }
+
+    .bodyCard{
+        width: 100%;
+        margin-left: 0;
+        align-items: center;
+        justify-content: center;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .detailCard{
+        text-align: center;
+    }
+
+    .resumeContainer{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        gap: 3rem;
+    }
+
+    .totalPrice{
+        margin: 0;
+        text-align: center;
+    }
+
+    .totalQuant{
+        margin: 0 auto;
+        text-align: center;
+    }
+}

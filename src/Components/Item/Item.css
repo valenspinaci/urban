@@ -1,0 +1,21 @@
+.linkBoton{
+    text-decoration: none;
+    color: white;
+    background-color: black;
+    border: none;
+}
+
+.linkBoton:hover{
+    color: black;
+    transition: .5s;
+    background-color: rgb(198, 198, 198);
+}
+
+.imgSize{
+    max-width: 70%;
+    margin: 0 auto;
+}
+
+.card{
+    min-height: 400px;
+}

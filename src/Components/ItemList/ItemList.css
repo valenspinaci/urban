@@ -1,0 +1,24 @@
+.productList{
+    width: 60%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2;
+}
+
+.linkCard{
+    text-decoration: none;
+    color: rgb(37, 37, 37);
+}
+
+.linkCard div{
+    max-height: 450px;
+}
+
+.linkCard:hover{
+    color: black;
+    transition: .5s;
+}
