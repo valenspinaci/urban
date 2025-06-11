@@ -8,15 +8,14 @@ const Footer = () => {
         <div className="bg-light footer d-flex-column mx-0-auto  d-lg-flex-row mt-3">  
             <div className="footerIzq">
                 <ul className="footerIzq_lista">
-                    <li>© 2022 Copyright</li>
+                    <li>© 2025 Copyright</li>
                     <li>Urban - Todos los derechos reservados</li>
                 </ul>
             </div>
 
             <div className="footerCentro d-none d-lg-block">
                 <ul className="footerCentro_lista">
-                    <li>Valentino Spinaci</li>
-                    <li>Coderhouse</li>
+                    <li>Gauchito Studio</li>
                     <li>React JS</li>
                 </ul>
             </div>
